@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shruthin's Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styling.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap">
+
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body> 
+ 
+    <button id="resume-button" class="btn download-resume" data-resume-url="{{ url_for('static', filename='Shruthin Reddy Sainapuram.pdf') }}">
+        <i class="fas fa-file-download"></i> DOWNLOAD RESUME
+    </button>
+
+    <div class="main-container">
+
+        <header>
+            <div class="header-container">
+                <div class="header-text">
+                    <h1>Shruthin Reddy Sainapuram</h1>
+                    <h2>Master's Student in Computer Science</h2>
+                    <h3>Data Science and Machine Learning Enthusiast</h3>
+                    
+   
+                    <div class="action-buttons">
+                        <button id="contact-button" class="btn primary-btn">
+                            <i class="fas fa-envelope"></i> Contact Me
+                        </button>
+                        <a href="https://www.linkedin.com/in/shruthin-reddy-sainapuram/" target="_blank" class="btn linkedin-btn">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+  
+                        <a href="https://github.com/shruthin4" target="_blank" class="btn github-btn">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+ 
+                    <div id="contact-info" class="hidden">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:shruthinreddysainapuram@gmail.com">shruthinreddysainapuram@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+14693507477">+1 469-350-7477</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="headshot">
+                    <img src="{{ url_for('static', filename='Images/IMG_2807.jpg') }}" alt="My Headshot">
+                </div>
+            </div>
+        </header>
+
+        <section id="about-section">
+            <h2>ABOUT ME</h2>
+            <div class="about-content">
+                <p>
+                    Hello, I'm Shruthin, a data scientist and machine learning enthusiast passionate about transforming complex data into actionable insights. 
+                    Currently pursuing my MS in Computer Science (GPA: 3.96/4.0) at the University of Louisville, I bring expertise in building end-to-end predictive models and analytics solutions.
+                    During my internship at VE Projects, I worked on data preprocessing for customer churn analysis using Python and SQL, while creating reports with Power BI to effectively communicate insights to stakeholders.
+                    My projects range from healthcare readmission prediction to AI-powered chatbots, with strong skills in Python, SQL, and machine learning frameworks.
+                    Driven by complex challenges, I'm eager to apply my knowledge in emerging technologies to deliver impactful data science solutions across healthcare, marketing, and customer analytics.
+                </p>
+            </div>
+        </section>
+    </div>
+
+
+    <button id="chatbot-btn" onclick="toggleChat()">
+        💬 Ask me about Shruthin
+    </button>
+
+    <div id="chat-window">
+        <div id="chat-header">
+            <div class="chat-title">
+                <img src="{{ url_for('static', filename='Images/bot-avatar.png') }}" alt="Bot Avatar" class="chat-avatar">
+                <div>
+                    <span class="chat-name">AI Bot Assistant</span>
+                    <span class="chat-status">Chat with Me 🤖</span>
+                </div>
+            </div>
+            <button id="close-chat" onclick="toggleChat()">×</button>
+        </div>
+
+        <div class="quick-questions">
+            <button class="query-btn" data-query="What is your work experience?">WORK EXPERIENCE</button>
+            <button class="query-btn" data-query="Tell me about your education background">EDUCATION</button>
+            <button class="query-btn" data-query="Can you list your projects?">PROJECTS</button>
+            <button class="query-btn" data-query="Tell me about your skills">SKILLS</button>
+            <button class="query-btn" data-query="What certifications do you have?">CERTIFICATIONS</button>
+            <button class="query-btn" data-query="What notes do you have?">NOTES</button>
+        </div>
+
+        <div id="chat-body">
+            <div id="chat-messages">
+                <div class="message bot-message">
+                    <img src="{{ url_for('static', filename='Images/bot-avatar.png') }}" alt="Bot Avatar" class="message-avatar">
+                    <div class="message-content">
+                        Hi! Ask me anything about Shruthin's skills, projects, or experience.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ 
+        <div id="chat-footer">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button class="send-btn" onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

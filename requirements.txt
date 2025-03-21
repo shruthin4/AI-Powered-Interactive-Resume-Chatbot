@@ -1,0 +1,10 @@
+transformers
+datasets
+nltk
+spacy
+textblob
+langchain
+pdfplumber
+flask
+google-generativeai
+
