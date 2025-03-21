@@ -68,4 +68,4 @@ jobs:
         with:
           app-name: 'shruthinbot'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_934D4DFF806744C5A77287D7E7065320 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
