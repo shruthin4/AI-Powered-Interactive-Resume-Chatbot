@@ -65,17 +65,12 @@ jobs:
         run: unzip release.zip
 
       
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F982166110354318B90003E988C45076 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0C1A2E6C544F45FEA799DFA5E9214E89 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1D851C1E0D8345A9987BDA45319C13A8 }}
-
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
-        id: deploy-to-webapp
         with:
-          app-name: 'shruthinreddybot'
-          slot-name: 'Production'
+          app-name: 'shruthinreddybot'   
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+          package: .
+
+
           
