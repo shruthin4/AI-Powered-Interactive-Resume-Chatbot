@@ -1,0 +1,6 @@
+__pycache__/
+llm_integration.py
+.env
+*.pyc
+chroma_db/
+Documents/
