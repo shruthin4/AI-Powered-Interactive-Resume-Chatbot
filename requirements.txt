@@ -7,4 +7,4 @@ langchain
 pdfplumber
 flask
 google-generativeai
-
+flask_cors
