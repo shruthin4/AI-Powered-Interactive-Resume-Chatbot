@@ -1,12 +1,12 @@
 import os
 import re
 import logging
-
+import google.generativeai as genai
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 
-import google.generativeai as genai
-from llm_integration import GEMINI_API_KEY
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 genai.configure(api_key=GEMINI_API_KEY)
 gemini_model = genai.GenerativeModel('gemini-1.5-flash-latest')
@@ -295,9 +295,10 @@ def cleanup_html(text):
     return text
 
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5000,use_reloader=False)
 
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
 
 
 
