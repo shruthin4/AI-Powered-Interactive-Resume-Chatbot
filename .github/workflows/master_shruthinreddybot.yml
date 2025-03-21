@@ -67,5 +67,5 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'shruthinbot'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+
