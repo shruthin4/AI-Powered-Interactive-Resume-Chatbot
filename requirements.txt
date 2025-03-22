@@ -1,6 +1,6 @@
 flask
 flask-cors
-google-generativeai
+google-generativeai==0.3.1
 chromadb
 nltk
 spacy
@@ -14,4 +14,5 @@ transformers
 datasets
 textblob
 gunicorn
+
 
